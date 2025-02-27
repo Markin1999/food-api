@@ -2,6 +2,7 @@ import { json } from "express";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { getAll } from "./controllers/controllers.js";
 
 dotenv.config();
 
