@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import Ricerca from "./Ricerca";
 
 function Dashboard() {
-  // const PORT = import.meta.env.VITE_PORT;
-  const PORT = 5001
-  console.log(PORT);
-  
+  const PORT = import.meta.env.VITE_PORT;
 
   const [data, setData] = useState([]);
   const [categoria, setCategoria] = useState([]);
@@ -36,14 +33,12 @@ function Dashboard() {
 
   useEffect(() => {
     fetchRicette();
-    console.log(categoria);
-    
   }, []);
 
   return (
     <>
       <div>
-        <Ricerca categoria={categoria}/>
+        <Ricerca categoria={categoria} />
         {data.map((ricetta) => (
           <div key={ricetta.id}>
             <img src={ricetta.img} />
