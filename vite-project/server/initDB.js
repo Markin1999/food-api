@@ -10,7 +10,7 @@ const setupDb = async () => {
   await db.none(`DROP TABLE IF EXISTS ricette;
         CREATE TABLE ricette(
         id SERIAL NOT NULL PRIMARY KEY,
-        img BYTEA,
+        img TEXT,
         titolo TEXT NOT NULL,
         ingredienti TEXT[] NOT NULL,
         procedimento TEXT NOT NULL,
@@ -26,7 +26,8 @@ const setupDb = async () => {
           
                'Tagliare il pane a fette e tostarlo. Mescolare pomodori a cubetti con olio, sale e basilico. Strofinare aglio sulle fette di pane e aggiungere il condimento.', 
           
-               'Antipasti', '00:15:00', 'path_to_image/bruschette_pomodoro.jpg'),
+               'Antipasti', '00:15:00', 'https://tse4.mm.bing.net/th?id=OIP.wizFhGOZ2tK_3M1GE9BXzwHaHa&w=200&h=200&c=7
+'),
           
               ('Guacamole', 
           
@@ -34,7 +35,8 @@ const setupDb = async () => {
           
                'Schiacciare l avocado con una forchetta, aggiungere lime, cipolla tritata, pomodoro a cubetti, sale, pepe e peperoncino.', 
           
-               'Antipasti', '00:10:00', 'path_to_image/guacamole.jpg'),
+               'Antipasti', '00:10:00', 'https://tse4.mm.bing.net/th?id=OIP.bb_VxQHSnqv_LHq2Uj009gHaHa&w=200&h=200&c=7
+'),
           
           ('Pasta al Pesto', 
           
@@ -42,7 +44,8 @@ const setupDb = async () => {
           
                'Cuocere la pasta. Frullare basilico, pinoli, parmigiano, aglio e olio d oliva. Mescolare il tutto e servire.', 
           
-               'Primi', '00:25:00', 'path_to_image/pasta_pesto.jpg'),
+               'Primi', '00:25:00', 'https://tse3.mm.bing.net/th?id=OIP.smjoanqtvoa-LFyeSIb3SwHaLH&w=200&h=300&c=7
+'),
           
               ('Risotto ai Funghi', 
           
@@ -50,7 +53,8 @@ const setupDb = async () => {
           
                'Soffriggere la cipolla, aggiungere i funghi, tostare il riso e sfumare con brodo. Cuocere fino a completa assorbimento e mantecare con burro e parmigiano.', 
           
-               'Primi', '00:40:00', 'path_to_image/risotto_funghi.jpg'),
+               'Primi', '00:40:00', 'https://tse2.mm.bing.net/th?id=OIP.xG6VPCGSqi5aYN-bv3jmvQHaE6&w=200&h=132&c=7
+'),
           
               ('Pollo al Curry', 
           
@@ -58,7 +62,8 @@ const setupDb = async () => {
           
                'Soffriggere la cipolla, aggiungere il pollo a cubetti e rosolare. Unire il curry e il latte di cocco, cuocere finché il pollo è morbido.', 
           
-               'Secondi', '00:30:00', 'path_to_image/pollo_curry.jpg'),
+               'Secondi', '00:30:00', 'https://tse1.mm.bing.net/th?id=OIP.qGsbvSI24nwa19zP3X1IPwHaFj&w=200&h=150&c=7
+'),
           
           ('Bistecca alla Fiorentina', 
           
@@ -66,7 +71,7 @@ const setupDb = async () => {
           
                'Scaldare la griglia, cuocere la bistecca 5 minuti per lato, aggiungere sale grosso e pepe, servire con olio extravergine.', 
           
-               'Secondi', '00:20:00', 'path_to_image/bistecca_fiorentina.jpg'),
+               'Secondi', '00:20:00', 'https://tse1.mm.bing.net/th?id=OIP.qCUpxiYF65IZIssqWWcCtQHaE6&w=200&h=132&c=7'),
           
               ('Tiramisù', 
           
@@ -74,7 +79,8 @@ const setupDb = async () => {
           
                'Montare uova e zucchero, aggiungere mascarpone. Inzuppare i savoiardi nel caffè, alternarli con la crema e spolverare di cacao.', 
           
-               'Dolci', '00:30:00', 'path_to_image/tiramisu.jpg'),
+               'Dolci', '00:30:00', 'https://tse2.mm.bing.net/th?id=OIP.g6OCL5qbY-Nnp-jUe3qzeQHaE7&w=200&h=133&c=7
+'),
           
               ('Cheesecake ai Frutti di Bosco', 
           
@@ -82,7 +88,7 @@ const setupDb = async () => {
           
                'Tritare i biscotti e mescolarli con burro fuso. Pressare in una teglia e aggiungere il ripieno di formaggio e zucchero. Raffreddare e decorare con frutti di bosco.', 
           
-               'Dolci', '01:00:00', 'path_to_image/cheesecake_frutti_bosco.jpg');`);
+               'Dolci', '01:00:00', 'https://tse3.mm.bing.net/th?id=OIP.Yug0QZQms3k4uAVWEI-lkgHaEo&w=200&h=125&c=7');`);
 
   console.log("Tabella creata correttamente");
 };
