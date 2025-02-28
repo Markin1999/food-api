@@ -1,10 +1,10 @@
 import pgPromise from "pg-promise";
 import dotenv from "dotenv";
-
 dotenv.config();
-const { DATABASE_URL } = process.env;
 
-const db = pgPromise()(DATABASE_URL);
+// const { DATABASE_URL } = process.env;
+
+const db = pgPromise()("postgres://postgres:postword@localhost:5432/ricette");
 
 const setupDb = async () => {
   await db.none(`DROP TABLE IF EXISTS ricette;

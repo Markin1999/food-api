@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import Ricerca from "./Ricerca";
 
 function Dashboard() {
-  const PORT = import.meta.env.VITE_PORT;
+  // const PORT = import.meta.env.VITE_PORT;
+  const PORT = 5001;
 
-  const [data, setData] = useState([]);
   const [categoria, setCategoria] = useState([]);
 
   const fetchRicette = async () => {
@@ -12,7 +12,6 @@ function Dashboard() {
       const response = await fetch(`http://localhost:${PORT}/ricette`);
       if (response.ok) {
         const dataFetched = await response.json();
-        setData(dataFetched);
 
         const categorie = [];
         dataFetched.forEach((element) => {
@@ -39,14 +38,6 @@ function Dashboard() {
     <>
       <div>
         <Ricerca categoria={categoria} />
-        {data.map((ricetta) => (
-          <div key={ricetta.id}>
-            <img src={ricetta.img} />
-            <h2>{ricetta.titolo}</h2>
-            <h4>{ricetta.categoria}</h4>
-            <h5>{ricetta.durata}</h5>
-          </div>
-        ))}
       </div>
     </>
   );

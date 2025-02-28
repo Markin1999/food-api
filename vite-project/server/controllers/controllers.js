@@ -22,11 +22,15 @@ export const getOneById = async (req, res) => {
 export const filterByCategory = async (req, res) => {
   const { categoria } = req.params;
   try {
+    if (categoria === "all") {
+      const category = await db.many(`SELECT * FROM ricette`);
+      return res.status(201).json(category);
+    }
     const category = await db.many(
       `SELECT * FROM ricette WHERE categoria=$1`,
       categoria
     );
-    return res.status(201).json({ category });
+    return res.status(201).json(category);
   } catch (error) {
     return res.status(500).json({ message: "errore nella richiesta", error });
   }

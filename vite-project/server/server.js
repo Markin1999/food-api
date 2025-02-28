@@ -11,7 +11,8 @@ import {
 dotenv.config();
 
 const app = express();
-const PORT = process.env.VITE_PORT;
+// const PORT = process.env.VITE_PORT;
+const PORT = 5001;
 
 app.use(json());
 app.use(cors());
